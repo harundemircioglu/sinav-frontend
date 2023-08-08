@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<p-toast></p-toast>
+<div class="all-users">
+  <div class="container mt-5">
+    <h3>Users</h3>
+    <div class="row">
+      <div class="col-md-3 mt-5" *ngFor="let user of users">
+        <div class="user-container">
+          <h3 class="mt-3">{{user.name}}</h3>
+          <button class="mt-3 mb-3" (click)="fallow(user.id,fallowedUserRequest)">Fallow</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

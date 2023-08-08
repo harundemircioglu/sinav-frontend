@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="profile-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="edit-profile">
+            <div class="profile" *ngIf="currentUser">
+              <input [(ngModel)]="currentUser.name" type="text" class="inputTxt mt-4">
+              <input [(ngModel)]="currentUser.email" type="text" class="inputTxt mt-4">
+              <input [(ngModel)]="currentUser.phone" type="text" class="inputTxt mt-4">
+              <button class="mt-4 mb-4">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

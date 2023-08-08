@@ -1,0 +1,15 @@
+<app-topbar></app-topbar>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-5">
+      <h2>WELCOME</h2>
+    </div>
+  </div>
+
+  <!-- GİRİŞ YAPAN KULLANICININ BİLGİLERİNİ GETİR -->
+  <div class="row" *ngIf="currentUser">
+    <div class="col-md-12">
+      <h4 style="font-style: italic; color: rgba(0, 0, 0, .5);">{{currentUser.name}}</h4>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+<p-toast></p-toast>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="new-tweet mt-4">
+        <button (click)="newTweet()">New</button>
+      </div>
+    </div>
+  </div>
+  <div class="new-tweet-area" [hidden]="tweetContainer">
+    <div class="tweet-area">
+      <input type="text" [(ngModel)]="tweetRequest.tweet_header" class="mt-3 tweetTxt header"
+        placeholder="Tweet header">
+      <textarea cols="30" [(ngModel)]="tweetRequest.tweet_detail" rows="10" class="mt-3 tweetTxt detail"
+        placeholder="Tweet detail"></textarea>
+      <button class="mt-3" (click)="send(tweetRequest)">Send</button>
+      <button class="mt-3 mb-3 close" (click)="close()">Close</button>
+    </div>
+  </div>
+</div>
+<div class="tweets">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-md-12 mt-4" *ngFor="let tweet of tweets">
+        <div class="tweet-card">
+          <p class="posted-by-user"><span>posted by </span>{{tweet.user.name}}</p>
+          <!-- TWEET HEADER -->
+          <h3>{{tweet.tweet_header}}</h3>
+          <p>{{tweet.tweet_detail}}</p>
+          <p><span>like </span>{{tweet.likes}}</p>
+          <div class="button-section mb-5">
+            <button (click)="like(tweet.id,tweet)">Like</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- GİRİŞ YAPAN KULLANICININ TAKİP ETTİĞİ KULLANICILARIN GÖNDERİLERİ -->
